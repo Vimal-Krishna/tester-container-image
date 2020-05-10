@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+    		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="main.css") }}">
+	</head>
+	<body>
+		<div class="main">
+			<div class="row">
+				<div class="label">Hostname</div>
+				<div class="value">{{ host["name"] }}</div>
+			</div>
+			IP addresses:
+			{% for address in host['addresses'] %}			
+			<div class="row">
+				<div class="label">Interface</div>
+				<div class="value">{{ address["ifacename"] }}</div>
+			</div>
+			<div class="row">
+				<div class="label">IP Address</div>
+				<div class="value">{{ address["ipv4address"] }}</div>
+			</div>
+			{% endfor %}
+		</div>
+		</div>
+	</body>
+</html>
+
